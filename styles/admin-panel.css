@@ -1,0 +1,186 @@
+/* Base Reset */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f3ede7; /* Warm Tan */
+  color: #4a3f35; /* Dark Brown */
+}
+/* Welcome Card Styling */
+.admin-welcome-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8cfcf;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-profile-pic img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f3ede7;
+}
+
+.admin-welcome-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #4a3f35;
+}
+
+.admin-welcome-text p {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  color: #6b8f71;
+}
+
+.admin-list-btn .action-btn {
+  background-color: #d17b63;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Reuse existing navbar and button styles from your main site */
+
+/* Admin Panel Container */
+.admin-panel {
+  padding: 2rem;
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  color: #4a3f35;
+}
+
+.search-container input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e8cfcf;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #4a3f35;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  border-bottom: 2px solid #e8cfcf;
+  margin-bottom: 2rem;
+}
+
+.nav-tab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: #4a3f35;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-tab.active {
+  border-bottom: 3px solid #d17b63; /* Terracotta */
+  color: #d17b63;
+}
+
+/* Section Headers */
+.section-header h2 {
+  color: #4a3f35;
+  margin-bottom: 1rem;
+}
+
+/* Items (User / Orders / Listings) */
+.user-item, .order-item, .listing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  border: 1px solid #e8cfcf; /* Dusty Rose border */
+}
+
+/* Avatars and Images */
+.user-avatar img, .listing-image img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #f3ede7;
+}
+
+/* User, Order, Listing Details */
+.user-details h3, .order-details h3, .listing-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a3f35;
+}
+
+.user-details p, .order-details p, .listing-details p {
+  margin: 4px 0;
+  color: #6b8f71; /* Accent Green for secondary text */
+  font-size: 0.95rem;
+}
+
+/* Status Tags */
+.user-status, .order-status, .listing-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-status.active,
+.order-status.completed,
+.listing-status.active {
+  background-color: #e4f1e8; /* Soft green tint */
+  color: #6b8f71; /* Olive Drab */
+}
+
+.user-status.inactive {
+  background-color: #fbe4e4;
+  color: #d17b63; /* Terracotta */
+}
+
+.user-status.pending {
+  background-color: #fdf3d7;
+  color: #b0892c;
+}
+
+/* Buttons */
+.action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #d17b63; /* Terracotta */
+  color: #fff;
+}
+
+.secondary {
+  background-color: #f8e3dc; /* Soft pink tint */
+  color: #d17b63;
+}

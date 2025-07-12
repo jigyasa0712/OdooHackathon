@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles/admin-panel.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <!-- ReWear Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="ReWear Logo" class="logo-img">
+                </div>
+
+                <nav class="nav desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="add-item.html">List Item</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="admin-panel.html">Admin</a>
+                </nav>
+
+                <div class="auth-buttons desktop-auth">
+                    <a href="#" class="btn btn-outline" onclick="openModal('loginModal')">Login</a>
+                    <a href="#" class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu">
+                <nav class="nav desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="add-item.html">List Item</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="admin-panel.html">Admin</a>
+                </nav>
+                
+                <div class="mobile-auth">
+                    <a href="#" class="btn btn-outline" onclick="openModal('loginModal')">Login</a>
+                    <a href="#" class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Header Card -->
+    <div class="admin-welcome-card">
+        <div class="admin-profile-pic">
+            <img src="assets/women1.jpg" alt="Admin Avatar">
+        </div>
+        <div class="admin-welcome-text">
+            <h2>Welcome back, Sarah!</h2>
+            <p>Managing your community with care 💼</p>
+        </div>
+        <div class="admin-list-btn">
+            <button class="action-btn primary">+ Add New Listing</button>
+        </div>
+    </div>
+
+    <div class="admin-panel">
+        <!-- Header Section -->
+        <div class="admin-header">
+            <h1 class="admin-title">Admin Panel</h1>
+            <div class="header-controls">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                </div>
+                <button class="visibility-toggle" id="visibilityToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="users">Manage User</button>
+            <button class="nav-tab" data-tab="orders">Manage Orders</button>
+            <button class="nav-tab" data-tab="listings">Manage Listings</button>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="content-container">
+            <!-- Manage Users Section -->
+            <div class="content-section active" id="users-section">
+                <div class="section-header">
+                    <h2>Manage Users</h2>
+                </div>
+                <div class="user-list">
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="assets/men1.avif" alt="User Avatar">
+                        </div>
+                        <div class="user-details">
+                            <h3>John Doe</h3>
+                            <p>john.doe@example.com</p>
+                            <span class="user-status active">Active</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="action-btn primary">Actions 1</button>
+                            <button class="action-btn secondary">Action 2</button>
+                        </div>
+                    </div>
+                    
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="assets/men1.avif" alt="User Avatar">
+                        </div>
+                        <div class="user-details">
+                            <h3>Jane Smith</h3>
+                            <p>jane.smith@example.com</p>
+                            <span class="user-status inactive">Inactive</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="action-btn primary">Actions 1</button>
+                            <button class="action-btn secondary">Action 2</button>
+                        </div>
+                    </div>
+                    
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="assets/men2.avif" alt="User Avatar">
+                        </div>
+                        <div class="user-details">
+                            <h3>Mike Johnson</h3>
+                            <p>mike.johnson@example.com</p>
+                            <span class="user-status active">Active</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="action-btn primary">Actions 1</button>
+                            <button class="action-btn secondary">Action 2</button>
+                        </div>
+                    </div>
+                    
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="assets/women1.jpg" alt="User Avatar">
+                        </div>
+                        <div class="user-details">
+                            <h3>Sarah Wilson</h3>
+                            <p>sarah.wilson@example.com</p>
+                            <span class="user-status pending">Pending</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="action-btn primary">Actions 1</button>
+                            <button class="action-btn secondary">Action 2</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Orders Section -->
+            <div class="content-section" id="orders-section">
+                <div class="section-header">
+                    <h2>Manage Orders</h2>
+                </div>
+                <div class="order-list">
+                    <div class="order-item">
+                        <div class="order-id">#12345</div>
+                        <div class="order-details">
+                            <h3>Order from John Doe</h3>
+                            <p>Total: $299.99 • Date: 2024-01-15</p>
+                            <span class="order-status completed">Completed</span>
+                        </div>
+                        <div class="order-actions">
+                            <button class="action-btn primary">View Details</button>
+                            <button class="action-btn secondary">Process</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Listings Section -->
+            <div class="content-section" id="listings-section">
+                <div class="section-header">
+                    <h2>Manage Listings</h2>
+                </div>
+                <div class="listing-list">
+                    <div class="listing-item">
+                        <div class="listing-image">
+                            <img src="assets/men1.avif" alt="Product Image">
+                        </div>
+                        <div class="listing-details">
+                            <h3>Premium Product</h3>
+                            <p>Category: Electronics • Price: $199.99</p>
+                            <span class="listing-status active">Active</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="action-btn primary">Edit</button>
+                            <button class="action-btn secondary">Archive</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin-panel.js"></script>
+</body>
+</html>

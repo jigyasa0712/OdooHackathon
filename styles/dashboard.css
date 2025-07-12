@@ -1,0 +1,409 @@
+/* Dashboard Specific Styles */
+.dashboard {
+  min-height: 100vh;
+  background: #f8f3ed;
+  padding: 2rem 0;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.user-welcome {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar-large {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #e8cfcf;
+}
+
+.user-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #4a3f35;
+  margin-bottom: 0.25rem;
+}
+
+.user-info p {
+  color: #6b5b4f;
+  margin: 0;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.user-avatar:hover {
+  background: #f8f3ed;
+}
+
+.user-avatar img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8cfcf;
+}
+
+.user-avatar span {
+  font-weight: 500;
+  color: #4a3f35;
+}
+
+.user-avatar i {
+  color: #6b5b4f;
+  font-size: 0.75rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(74, 63, 53, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(74, 63, 53, 0.1);
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.stat-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b5b4f;
+}
+
+.stat-icon {
+  font-size: 1rem;
+  color: #6b8f71;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a3f35;
+  margin-bottom: 0.25rem;
+}
+
+.stat-change {
+  font-size: 0.75rem;
+  color: #6b5b4f;
+}
+
+/* Dashboard Tabs */
+.dashboard-tabs {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(74, 63, 53, 0.1);
+  overflow: hidden;
+}
+
+.tab-nav {
+  display: flex;
+  border-bottom: 1px solid #e8cfcf;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b5b4f;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  color: #4a3f35;
+  background: #f8f3ed;
+}
+
+.tab-btn.active {
+  color: #6b8f71;
+  border-bottom-color: #6b8f71;
+  background: white;
+}
+
+.tab-content {
+  display: none;
+  padding: 1.5rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Items List */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e8cfcf;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s;
+  background: white;
+}
+
+.item-row:hover {
+  border-color: #d4b8b8;
+}
+
+.item-thumbnail {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.375rem;
+  object-fit: cover;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a3f35;
+  margin-bottom: 0.5rem;
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.item-views,
+.item-points {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #6b5b4f;
+}
+
+.item-points {
+  color: #6b8f71;
+  font-weight: 500;
+}
+
+/* Swaps List */
+.swaps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.swap-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e8cfcf;
+  border-radius: 0.5rem;
+  background: white;
+}
+
+.swap-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.swap-indicator.outgoing {
+  background: #d17b63;
+}
+
+.swap-indicator.incoming {
+  background: #6b8f71;
+}
+
+.swap-details {
+  flex: 1;
+}
+
+.swap-details h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a3f35;
+  margin-bottom: 0.25rem;
+}
+
+.swap-details p {
+  font-size: 0.875rem;
+  color: #6b5b4f;
+  margin: 0;
+}
+
+.swap-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: right;
+}
+
+.swap-date {
+  font-size: 0.875rem;
+  color: #6b5b4f;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.profile-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-avatar img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e8cfcf;
+}
+
+.profile-form {
+  flex: 1;
+}
+
+.form-value {
+  color: #4a3f35;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem 0;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-welcome {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tab-nav {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    text-align: left;
+    border-bottom: none;
+    border-right: 2px solid transparent;
+  }
+
+  .tab-btn.active {
+    border-right-color: #6b8f71;
+    border-bottom-color: transparent;
+  }
+
+  .item-row,
+  .swap-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .item-meta,
+  .swap-status {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .profile-avatar {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-content {
+    padding: 1rem;
+  }
+
+  .item-row,
+  .swap-row {
+    padding: 0.75rem;
+  }
+
+  .item-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

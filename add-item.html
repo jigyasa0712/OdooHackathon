@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List an Item - ReWear</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/add-item.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                 <div class="logo">
+                 <img src="assets/logo.png" alt="ReWear Logo" class="logo-img">
+                </div>
+
+                
+                <nav class="nav desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="add-item.html">List Item</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="admin-panel.html">Admin</a>
+                </nav>
+                
+                <div class="user-menu" style="display: flex; align-items: center; gap: 0.5rem;">
+        <div class="user-avatar" style="display: flex; align-items: center; gap: 0.5rem;">
+          <img src="assets/women1.jpg" alt="User Avatar" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
+          <span style="font-size: 0.9rem; font-weight: 500; color: #333;">Sarah M.</span>
+        </div>
+      </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="index.html">Home</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="#browse">Browse</a>
+                    <a href="add-item.html">List Item</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add Item Page -->
+    <main class="add-item-page">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>List Your Item</h1>
+                    <p>Share your pre-loved fashion with the ReWear community</p>
+                </div>
+
+               <!-- Add Item Form -->
+<form class="add-item-form" id="addItemForm">
+  <div class="form-grid two-column">
+    <!-- LEFT COLUMN: Photos -->
+   <div class="form-section left-column">
+  <div class="section-header">
+    <h3>Photos</h3>
+    <p>Add up to 5 high-quality photos of your item</p>
+  </div>
+  <div id="photoGrid" style="display: flex; justify-content: center; align-items: center; height: 100%; min-height: 300px;">
+    <div onclick="triggerFileUpload()" style="
+      width: 25vw;
+      height: 25vw;
+      max-width: 300px;
+      max-height: 300px;
+      border: 2px dashed #d9a7a7;
+      border-radius: 8px;
+      background-color: #fdf5f3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 16px;
+      color: #6b4e4e;
+      gap: 25px;
+    ">
+      <i class="fas fa-camera" style="font-size: 2rem;"></i>
+      <span>Add Photo</span>
+      <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- RIGHT COLUMN: Basic Info -->
+    <div class="form-section right-column">
+      <div class="section-header">
+        <h3>Basic Information</h3>
+        <p>Tell us about your item</p>
+      </div>
+      <div class="form-group full-width">
+        <label for="itemTitle">Item Title</label>
+        <input type="text" id="itemTitle" name="title" placeholder="e.g., Vintage Levi's Denim Jacket" required>
+        <small>Be specific and descriptive</small>
+      </div>
+
+      <div class="form-group">
+        <label for="itemBrand">Brand</label>
+        <input type="text" id="itemBrand" name="brand" placeholder="e.g., Levi's" required>
+      </div>
+
+      <div class="form-group">
+        <label for="itemCategory">Category</label>
+        <select id="itemCategory" name="category" required>
+          <option value="">Select Category</option>
+          <option value="tops">Tops</option>
+          <option value="bottoms">Bottoms</option>
+          <option value="dresses">Dresses</option>
+          <option value="outerwear">Outerwear</option>
+          <option value="shoes">Shoes</option>
+          <option value="accessories">Accessories</option>
+          <option value="bags">Bags</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="itemDescription">Description</label>
+        <textarea id="itemDescription" name="description" placeholder="Describe the item's condition, fit, styling details, and any flaws..." required></textarea>
+        <small>Be honest about condition and include measurements if helpful</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exchange Details -->
+  <div class="form-section">
+    <div class="section-header">
+      <h3>Exchange Details</h3>
+      <p>Set your exchange preferences</p>
+    </div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="itemSize">Size</label>
+        <select id="itemSize" name="size" required>
+          <option value="">Select Size</option>
+          <option value="xs">XS</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+          <option value="xxl">XXL</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="itemCondition">Condition</label>
+        <select id="itemCondition" name="condition" required>
+          <option value="">Select Condition</option>
+          <option value="like-new">Like New</option>
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="fair">Fair</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="itemPoints">Points Value</label>
+        <input type="number" id="itemPoints" name="points" min="1" max="500" placeholder="45" required>
+        <small>Suggested: 35–65 points</small>
+      </div>
+
+      <div class="form-group">
+        <label for="exchangeType">Exchange Type</label>
+        <select id="exchangeType" name="exchangeType" required>
+          <option value="">Select Type</option>
+          <option value="points">Points Only</option>
+          <option value="trade">Direct Trade</option>
+          <option value="both">Points or Trade</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="tradePreferences">Trade Preferences (Optional)</label>
+        <textarea id="tradePreferences" name="tradePreferences" placeholder="e.g., Looking for band tees, size M tops, etc."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <div class="form-section">
+    <div class="section-header">
+      <h3>Tags</h3>
+      <p>Add tags to help others find your item</p>
+    </div>
+    <div class="tags-container">
+      <div class="tags-list" id="tagsList"></div>
+      <div class="tag-input-container">
+        <input type="text" id="tagInput" placeholder="e.g., vintage, boho, casual">
+        <button type="button" class="btn btn-outline" onclick="addTag()">Add Tag</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="form-actions">
+    <button type="button" class="btn btn-outline" onclick="saveDraft()">Save Draft</button>
+    <button type="submit" class="btn btn-primary">List Item</button>
+  </div>
+</form>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/add-item.js"></script>
+</body>
+</html>
